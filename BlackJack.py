@@ -1,5 +1,4 @@
 import random
-# Счет игрока и бота
 user = 0
 bot = 0
 koloda = [2, 3, 4, 6, 7, 8, 9, 10, 11]
@@ -15,13 +14,13 @@ while True:
 		print("Вы проиграли, так как набрали больше 21")
 		print("Попытайте свою попытку в другой раз.")
 		break
-	da_net = input("Будете ли вы брать карту?Введите 1(да) или введите 2(нет) =>")
-	if da_net == '1':
+	variant = input("Будете ли вы брать карту?Введите 1(да) или введите 2(нет) =>")
+	if variant == "1":
 		kart = random.choice(koloda)
 		print("Вы взяли карту выпало:", kart)
 		user += kart
 		print("Сейчас у вас ", user)
-	if da_net == '2':
+	if variant == "2":
 		print("У вас ", user, "очков.")
 		print()
 		print("Ход бота")
