@@ -1,16 +1,16 @@
 import random
-user = 0
+igrok = 0
 bot = 0
 koloda = [2, 3, 4, 6, 7, 8, 9, 10, 11]
 print("Поиграем в BlackJack? Если хотите играть нажмите Enter, если хотите выйти, то закройте всё!")
 print("В колоде есть 6,7,8,9,10,(Валет=2),(Дама=3),(Король=4),(Туз=11)")
 a=input()
 while True:
-	if user == 21:
+	if igrok == 21:
 		print("Больше карт не надо, у вас 21")
 		print("Вы автоматически победили бота, так как у вас 21.")
 		break
-	if user>21:
+	if igrok>21:
 		print("Вы проиграли, так как набрали больше 21")
 		print("Попытайте свою попытку в другой раз.")
 		break
@@ -18,10 +18,10 @@ while True:
 	if variant == "1":
 		kart = random.choice(koloda)
 		print("Вы взяли карту выпало:", kart)
-		user += kart
-		print("Сейчас у вас ", user)
+		igrok += kart
+		print("Сейчас у вас ", igrok)
 	if variant == "2":
-		print("У вас ", user, "очков.")
+		print("У вас ", igrok, "очков.")
 		print()
 		print("Ход бота")
 		while True:
@@ -32,15 +32,15 @@ while True:
 				bot += kart
 				print("У бота ", bot, "очков.")
 			if bot>21:
-				print("Бот проиграл.Так как у него", bot, "очков, а у вас ", user)
+				print("Бот проиграл.Так как у него", bot, "очков, а у вас ", igrok)
 				print("Нажмите Enter, чтобы закрыть")
-				exit(0)
-			if bot>user:
-				print("Бот победил.Так как у него", bot, "очков, а у вас ", user)
+				break
+			if bot>igrok:
+				print("Бот победил.Так как у него", bot, "очков, а у вас ", igrok)
 				print("Не растраивайтесь. Попробуйте ещё раз.")
 				print("Нажмите Enter, чтобы закрыть")
-				exit(0)
-			if bot == user:
+				break
+			if bot == igrok:
 				print("Вы набрали равное количество очков и у вас ничья")
 				print("Нажмите Enter, чтобы закрыть")
-				exit(0)
+				break
