@@ -1,11 +1,11 @@
 import random
 igrok = 0
 bot = 0
-popitka=0
 koloda = [2, 3, 4, 6, 7, 8, 9, 10, 11]
 print("Поиграем в BlackJack? Если хотите играть нажмите Enter, если хотите выйти, то закройте всё!")
 print("В колоде есть 6,7,8,9,10,(Валет=2),(Дама=3),(Король=4),(Туз=11)")
 a=input()
+popitka=0
 while True:
 	if igrok == 21:
 		print("Больше карт не надо, у вас 21")
@@ -35,15 +35,26 @@ while True:
 			if bot>21:
 				print("Бот проиграл.Так как у него", bot, "очков, а у вас ", igrok)
 				print("Нажмите Enter, чтобы закрыть")
+				popitka+=1
+				print()
+				print("Было потрачено", popitka, "попытка/ок")
+				print()
 				break
 			if bot>igrok:
 				print("Бот победил.Так как у него", bot, "очков, а у вас ", igrok)
 				print("Не растраивайтесь. Попробуйте ещё раз.")
 				print("Нажмите Enter, чтобы закрыть")
+				popitka+=1
+				print()
+				print("Было потрачено", popitka, "попытка/ок")
+				print()
 				break
 			if bot == igrok:
 				print("Вы набрали равное количество очков и у вас ничья")
 				print("Нажмите Enter, чтобы закрыть")
+				popitka+=1
+				print()
+				print("Было потрачено", popitka, "попытка/ок.")
+				print()
 				break
-popitka+=1
-print("Было потрачено", popitka, "попыток.")
+print("Всего было потрачено", popitka, "попытка/ок")
