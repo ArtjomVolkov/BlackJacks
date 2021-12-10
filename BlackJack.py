@@ -10,7 +10,6 @@ while True:
 	if igrok == 21:
 		print("Больше карт не надо, у вас 21")
 		print("Вы автоматически победили бота, так как у вас 21.")
-		break
 	if igrok>21:
 		print("Вы проиграли, так как набрали больше 21")
 		print("Попытайте свою попытку в другой раз.")
@@ -18,7 +17,6 @@ while True:
 		print()
 		print("Было потрачено", popitka, "попытка/ок")
 		print()
-		break
 	variant = input("Будете ли вы брать карту?Введите 1(да) или введите 2(нет) =>")
 	if variant == "1":
 		kart = random.choice(koloda)
@@ -43,7 +41,7 @@ while True:
 				print()
 				print("Было потрачено", popitka, "попытка/ок")
 				print()
-				break
+				exit(0)
 			if bot>igrok:
 				print("Бот победил.Так как у него", bot, "очков, а у вас ", igrok)
 				print("Не растраивайтесь. Попробуйте ещё раз.")
@@ -52,7 +50,7 @@ while True:
 				print()
 				print("Было потрачено", popitka, "попытка/ок")
 				print()
-				break
+				exit(0)
 			if bot == igrok:
 				print("Вы набрали равное количество очков и у вас ничья")
 				print("Нажмите Enter, чтобы закрыть")
@@ -60,5 +58,5 @@ while True:
 				print()
 				print("Было потрачено", popitka, "попытка/ок.")
 				print()
-				break
+				exit(0)
 print("Всего было потрачено", popitka, "попытка/ок")
