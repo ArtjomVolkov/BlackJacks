@@ -34,6 +34,8 @@ while True:
 				print("Боту выпало", kart, "очков.")
 				bot += kart
 				print("У бота ", bot, "очков.")
+				print()
+				exit(0)
 			if bot>21:
 				print("Бот проиграл.Так как у него", bot, "очков, а у вас ", igrok)
 				print("Нажмите Enter, чтобы закрыть")
